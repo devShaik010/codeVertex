@@ -1,0 +1,304 @@
+.bootcamps-section {
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  animation: sectionFade 0.8s ease-out forwards;
+}
+
+@keyframes sectionFade {
+  to {
+    opacity: 1;
+  }
+}
+
+.bootcamps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00D5FF, #DC1FFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: headerSlide 0.8s ease-out forwards;
+}
+
+@keyframes headerSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: headerSlide 0.8s ease-out 0.2s forwards;
+}
+
+.bootcamps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.bootcamp-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  animation: cardAppear 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes cardAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bootcamp-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(220, 31, 255, 0.3);
+}
+
+.bootcamp-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #00D5FF, #DC1FFF);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.bootcamp-card:hover::after {
+  opacity: 0.1;
+}
+
+.bootcamp-thumbnail {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.bootcamp-thumbnail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bootcamp-card:hover .bootcamp-thumbnail::before {
+  opacity: 1;
+}
+
+.bootcamp-card:hover .bootcamp-thumbnail {
+  transform: scale(1.05);
+}
+
+.bootcamp-duration {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.bootcamp-card:hover .bootcamp-duration {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bootcamp-content {
+  padding: 1.5rem;
+}
+
+.bootcamp-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.bootcamp-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.bootcamp-card:hover .detail-item {
+  transform: translateX(5px);
+}
+
+.detail-icon {
+  color: #DC1FFF;
+  transition: transform 0.3s ease;
+}
+
+.bootcamp-card:hover .detail-icon {
+  transform: scale(1.2);
+}
+
+.bootcamp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bootcamp-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.enroll-btn {
+  background: linear-gradient(45deg, #00D5FF, #DC1FFF);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enroll-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #DC1FFF, #00D5FF);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.enroll-btn:hover::before {
+  opacity: 1;
+}
+
+.enroll-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stagger animation for cards */
+.bootcamps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.bootcamp-card:nth-child(1) { animation-delay: 0.1s; }
+.bootcamp-card:nth-child(2) { animation-delay: 0.2s; }
+.bootcamp-card:nth-child(3) { animation-delay: 0.3s; }
+.bootcamp-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Shimmer effect on hover */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.bootcamp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bootcamp-card:hover::before {
+  opacity: 1;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .bootcamps-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .bootcamp-thumbnail {
+    height: 180px;
+  }
+}
