@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/hero'
-import BootcampList from './components/Bootcamps/BootcampList'
-import TestimonialList from './components/Testimonials/TestimonialList'
-import Footer from './components/Footer/Footer'
-import Loader from './components/Loader/Loader'
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import BootcampList from './components/Bootcamps/BootcampList';
+import TestimonialList from './components/Testimonials/TestimonialList';
+import Footer from './components/Footer/Footer';
+import Loader from './components/Loader/Loader';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
